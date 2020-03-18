@@ -13,21 +13,24 @@ public class ShellSort {
         int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
         //shellSort(arr);
 
-        int[] array = new int[80000];
-        for (int i = 0; i < 80000; i++) {
+        int[] array = new int[800000];
+        for (int i = 0; i < 800000; i++) {
             array[i] = (int)(Math.random() * 8000000);
         }
         System.out.println("排序前");
-        Date data1 = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String format1 = simpleDateFormat.format(data1);
-        System.out.println("排序前的时间=" + format1);
+//        Date data1 = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String format1 = simpleDateFormat.format(data1);
+//        System.out.println("排序前的时间=" + format1);
         //shellSort1(array);
+        long begin = System.currentTimeMillis();
         shellSort2(array);
-        Date data2 = new Date();
-        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String format2 = simpleDateFormat.format(data2);
-        System.out.println("排序后的时间=" + format2);
+        long after = System.currentTimeMillis();
+        System.out.println(after - begin + "ms");
+//        Date data2 = new Date();
+//        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String format2 = simpleDateFormat.format(data2);
+//        System.out.println("排序后的时间=" + format2);
     }
 
     //逐步推导

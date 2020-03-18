@@ -1,5 +1,6 @@
 package com.moqi.sort;
 
+import java.io.OutputStream;
 import java.util.Arrays;
 
 /**
@@ -9,8 +10,16 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {-9, 78, 0, 23, -567, 70};
+        int[] array = new int[800000];
+        for (int i = 0; i < 800000; i++) {
+            array[i] = (int)(Math.random() * 8000000);
+        }
+        long begin = System.currentTimeMillis();
         quickSort(arr, 0, arr.length - 1);
-        System.out.println("arr=" + Arrays.toString(arr));
+       // System.out.println("arr=" + Arrays.toString(array));
+        long after = System.currentTimeMillis();
+        System.out.println(after - begin + "ms");
+
     }
 
     public static void quickSort(int[] arr, int left, int right) {
