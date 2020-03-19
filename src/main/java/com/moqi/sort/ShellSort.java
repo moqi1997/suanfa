@@ -25,6 +25,7 @@ public class ShellSort {
         //shellSort1(array);
         long begin = System.currentTimeMillis();
         shellSort2(array);
+
         long after = System.currentTimeMillis();
         System.out.println(after - begin + "ms");
 //        Date data2 = new Date();
