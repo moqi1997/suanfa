@@ -15,7 +15,7 @@ public class ShellSort {
 
         int[] array = new int[800000];
         for (int i = 0; i < 800000; i++) {
-            array[i] = (int)(Math.random() * 8000000);
+            array[i] = (int) (Math.random() * 8000000);
         }
         System.out.println("排序前");
 //        Date data1 = new Date();
