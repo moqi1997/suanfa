@@ -34,7 +34,7 @@ public class Student {
         this.time = time;
         this.cname = cname;
         this.place = place;
-        System.out.println("上课时间" + time + "课程名称" + place + "上课地点");
+        System.out.println("上课时间" + time + "课程名称" + cname + "上课地点" + place);
     }
 
     public String getSno() {
