@@ -9,10 +9,10 @@ public class BinaryTreeDemo {
         //创建一颗二叉树
         BinaryTree BinaryTree = new BinaryTree();
         //创建需要的节点
-        HeroNode root = new HeroNode(1,"宋江");
-        HeroNode heroNode1 = new HeroNode(2,"无用");
-        HeroNode heroNode2 = new HeroNode(3,"卢俊义");
-        HeroNode heroNode3 = new HeroNode(4,"林冲");
+        HeroNode root = new HeroNode(1, "宋江");
+        HeroNode heroNode1 = new HeroNode(2, "无用");
+        HeroNode heroNode2 = new HeroNode(3, "卢俊义");
+        HeroNode heroNode3 = new HeroNode(4, "林冲");
         root.setLeft(heroNode1);
         root.setRight(heroNode2);
         heroNode2.setRight(heroNode3);
@@ -73,6 +73,7 @@ class HeroNode {
                 ", name='" + name + '\'' +
                 '}';
     }
+
     //前序遍历
     public void preOrder() {
         //线束如父节点
@@ -86,6 +87,7 @@ class HeroNode {
             this.right.preOrder();
         }
     }
+
     //中序遍历
     public void infixOrder() {
         //递归向左子树中序遍历
@@ -94,9 +96,11 @@ class HeroNode {
         }
         System.out.println(this);
         if (this.right != null) {
-            this.right.infixOrder();;
+            this.right.infixOrder();
+            ;
         }
     }
+
     //后续遍历
     public void afterOrder() {
 
@@ -111,13 +115,38 @@ class HeroNode {
         //线束如父节点
         System.out.println(this);
     }
+
+    //前序遍历
+    public HeroNode preOrdersearch(int no) {
+        if (this.no == no) {
+            return this;
+        }
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.preOrdersearch(no);
+        }
+        if (resNode != null) {
+            //说明我们左子树找到
+            return resNode;
+        }
+        //1.左递归前序查找，找到节点，则返回，否继续判断
+        //2.当前的节点的右子节点是否为空，如果不空，则继续向右递归前序查找
+        if (this.right != null) {
+            resNode = this.right.preOrdersearch(no);
+        }
+        return resNode;
+
+    }
+
 }
+
 class BinaryTree {
     private HeroNode root;
 
     public void setRoot(HeroNode root) {
         this.root = root;
     }
+
     //前序遍历
     public void preOrder() {
         if (this.root != null) {
@@ -126,6 +155,7 @@ class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
+
     //中序遍历
     public void infixOrder() {
         if (this.root != null) {
@@ -134,6 +164,7 @@ class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
+
     //后续遍历
     public void afterOrder() {
         if (this.root != null) {
