@@ -77,7 +77,7 @@ class ShareDate {
         lock.lock();
         try {
             //1判断
-            if (number != 0) {
+            while (number != 0) {
                 //等待，不能生产
                 condition.await();
             }
@@ -96,7 +96,7 @@ class ShareDate {
         lock.lock();
         try {
             //1判断
-            if (number == 0) {
+            while (number == 0) {
                 //等待，不能消费
                 condition.await();
             }
