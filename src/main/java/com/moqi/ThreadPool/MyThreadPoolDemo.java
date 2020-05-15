@@ -11,9 +11,10 @@ import static java.util.concurrent.Executors.*;
  */
 public class MyThreadPoolDemo {
     public static void main(String[] args) {
-        ExecutorService threadPool = newFixedThreadPool(5);
+      //  ExecutorService threadPool = newFixedThreadPool(5);
+        ExecutorService threadPool = newCachedThreadPool();
         try {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 50; i++) {
                 threadPool.execute(new Runnable() {
                     @Override
                     public void run() {
